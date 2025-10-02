@@ -91,7 +91,7 @@ export default function Navbar() {
           ))}
           {/* Mobile Resume Button */}
           <a
-            href="/public/Resume.pdf"
+            href="/Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="w-full text-center mt-2 font-semibold px-4 py-2 rounded shadow border bg-white text-[#141622] hover:bg-white/10 hover:text-white hover:border-white transition-all duration-300"
