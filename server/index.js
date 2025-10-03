@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,13 +24,12 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log("✅ MongoDB connected successfully");
-    console.log(`🌐 Server running on port ${PORT}`);
-    console.log(`Environment: ${process.env.NODE_ENV}`);
+    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   })
   .catch((err) => {
     console.error("❌ MONGO connection error:", err.message);
   });
-  
+
 // Basic route
 app.get('/', (req, res) => {
   res.json({ 
@@ -53,7 +52,7 @@ app.get('/health', (req, res) => {
   });
 });
 
-// 404 handler (fixed ✅)
+// 404 handler
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -70,10 +69,5 @@ app.use((error, req, res, next) => {
   });
 });
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`Database: ${MONGO_URI}`);
-});
+// Export app for Vercel serverless function
+export default app;
