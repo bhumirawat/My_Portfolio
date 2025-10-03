@@ -5,7 +5,6 @@ import HeroScene from "./components/HeroScene";
 import ProjectsSection from "./components/ProjectsSection"; 
 import ContactForm from "./components/ContactForm";
 import About from "./pages/About";
-import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
@@ -40,7 +39,6 @@ export default function App() {
           } />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
