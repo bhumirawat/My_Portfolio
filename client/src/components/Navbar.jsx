@@ -52,7 +52,7 @@ export default function Navbar() {
       {/* Desktop Resume Button */}
       <a
         className="hidden md:inline-block font-semibold px-4 py-1 rounded shadow border transition-all duration-300 bg-white text-[#141622] hover:bg-[#141622] hover:text-white hover:border-white"
-        href="/public/Resume.pdf"
+        href="/Resume.pdf"
         target="_blank"
         rel="noreferrer"
       >
