@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/contact', contactRoutes);
 
 // Database connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/contactdb';
+const MONGO_URI = process.env.MONGO_URI ;
 
 mongoose
   .connect(MONGO_URI)
